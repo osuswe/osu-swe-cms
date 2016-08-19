@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Link extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'links';
 
     /**
     * The database primary key value.
@@ -25,5 +25,5 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ['username', 'password', 'officer', 'year', 'major'];
+    protected $fillable = ['id', 'link'];
 }

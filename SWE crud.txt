@@ -1,0 +1,7 @@
+php artisan crud:generate Events --fields="title#string#required, date#string#required,location#string#required,description#string#required,time_range#string#required" --route=yes --pk=id --view-path="admin" --namespace=Admin --route-group=admin
+
+php artisan crud:generate Users --fields="username#string#required, password#string#required,officer#boolean#required,year#integer#required,major#string#required" --route=yes --pk=id --view-path="admin" --namespace=Admin --route-group=admin
+
+php artisan crud:generate Attendences --fields="user_id#integer#required,event_id#integer#required" --route=yes --pk=id --view-path="admin" --namespace=Admin --route-group=admin
+
+php artisan crud:generate Links --fields="id#integer#required,link#string#required" --route=yes --pk=id --view-path="admin" --namespace=Admin --route-group=admin
