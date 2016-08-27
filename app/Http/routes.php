@@ -11,13 +11,20 @@
 |
 */
 
+use App\Http\Controllers\Admin\UsersController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::resource('admin/events', 'Admin\\EventsController');
 Route::resource('admin/users', 'Admin\\UsersController');
-Route::resource('admin/attendences', 'Admin\\AttendencesController');
-Route::resource('admin/links', 'Admin\\LinksController');
 Route::resource('admin/links', 'Admin\\LinksController');
 Route::resource('admin/attendance', 'Admin\\AttendanceController');
+
+Route::post('/admin/users/store',function(\Illuminate\Http\Request $r){
+
+    $userC=new UsersController();
+    $userC->store($r);
+
+});
