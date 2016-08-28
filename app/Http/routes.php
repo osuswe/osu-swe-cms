@@ -23,9 +23,14 @@ Route::resource('admin/links', 'Admin\\LinksController');
 Route::resource('admin/attendance', 'Admin\\AttendanceController');
 
 //use cors middleware to make cross origin requests
-Route::post('/admin/storeUser',['middleware'=>'cors',function(\Illuminate\Http\Request $r){
+Route::post('/admin/storeUser', ['middleware' => 'cors', function (\Illuminate\Http\Request $r) {
 
-    $userC=new UsersController();
+    $userC = new UsersController();
     $userC->store($r);
 
+}]);
+
+Route::post('/admin/login', ['middleware' => 'cors', function (\Illuminate\Http\Request $r) {
+    $userC = new UsersController();
+    echo $userC->login($r);
 }]);

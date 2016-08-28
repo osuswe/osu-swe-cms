@@ -41,7 +41,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['username' => 'required', 'year' => 'required', 'major' => 'required']);
+        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','year' => 'required', 'major' => 'required']);
 
         User::create($request->all());
 
@@ -87,7 +87,7 @@ class UsersController extends Controller
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['username' => 'required', 'password' => 'required', 'officer' => 'required', 'year' => 'required', 'major' => 'required', ]);
+        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','year' => 'required', 'major' => 'required']);
 
         $user = User::findOrFail($id);
         $user->update($request->all());
@@ -111,5 +111,20 @@ class UsersController extends Controller
         Session::flash('flash_message', 'User deleted!');
 
         return redirect('admin/users');
+    }
+
+    /**
+     * Handle user authentication
+     * @param Request $request
+     */
+    public function login(Request $request){
+        $user=User::where("username","=",$request->username)->first();
+        if($user && $user->password==$request->password){
+            return "true";
+        }
+        else{
+            return "false";
+        }
+
     }
 }

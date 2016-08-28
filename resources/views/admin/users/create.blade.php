@@ -7,8 +7,21 @@
     <hr/>
 
     {!! Form::open(['url' => '/admin/users', 'class' => 'form-horizontal']) !!}
-
-                <div class="form-group {{ $errors->has('username') ? 'has-error' : ''}}">
+    <div class="form-group {{ $errors->has('firstName') ? 'has-error' : ''}}">
+        {!! Form::label('firstName', 'First Name', ['class' => 'col-sm-3 control-label']) !!}
+        <div class="col-sm-6">
+            {!! Form::text('firstName', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! $errors->first('firstName', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('lastName') ? 'has-error' : ''}}">
+        {!! Form::label('lastName', 'Last Name', ['class' => 'col-sm-3 control-label']) !!}
+        <div class="col-sm-6">
+            {!! Form::text('lastName', null, ['class' => 'form-control', 'required' => 'required']) !!}
+            {!! $errors->first('lastName', '<p class="help-block">:message</p>') !!}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('username') ? 'has-error' : ''}}">
                 {!! Form::label('username', 'Username', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
                     {!! Form::text('username', null, ['class' => 'form-control', 'required' => 'required']) !!}
@@ -48,6 +61,14 @@
                     {!! $errors->first('major', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
+
+        <div class="form-group {{ $errors->has('phone') ? 'has-error' : ''}}">
+            {!! Form::label('phone', 'Phone #', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('phone', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! $errors->first('phone', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
 
 
     <div class="form-group">
