@@ -43,6 +43,7 @@
                     {!! $errors->first('time_range', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
+            <input id="event_code" name="event_code" type="hidden" value="">
 
 
     <div class="form-group">
@@ -61,4 +62,11 @@
     @endif
 
 </div>
+<script>
+window.onload=function(){
+    var randCode=Math.floor(Math.random*1000);
+    document.getElementById('event_code').value=randCode;
+};
+</script>
+
 @endsection
