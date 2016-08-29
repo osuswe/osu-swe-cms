@@ -34,3 +34,8 @@ Route::post('/admin/login', ['middleware' => 'cors', function (\Illuminate\Http\
     $userC = new UsersController();
     echo $userC->login($r);
 }]);
+
+Route::get('/admin/get/events/all',function(){
+    $eventsC=new \App\Http\Controllers\Admin\EventsController();
+    echo $eventsC->all();
+});

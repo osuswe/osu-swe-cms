@@ -41,7 +41,7 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required', ]);
+        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required',]);
 
         Event::create($request->all());
 
@@ -53,7 +53,7 @@ class EventsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class EventsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -81,13 +81,13 @@ class EventsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required', ]);
+        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required',]);
 
         $event = Event::findOrFail($id);
         $event->update($request->all());
@@ -100,7 +100,7 @@ class EventsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -112,4 +112,10 @@ class EventsController extends Controller
 
         return redirect('admin/events');
     }
+
+    public function all()
+    {
+        return Event::all();
+    }
+
 }
