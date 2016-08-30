@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Events\Event;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -127,6 +126,14 @@ class UsersController extends Controller
             return "false";
         }
 
+    }
+
+    /*
+     * Get user profile information of user given username
+     */
+    public function getProfileInfo($username)
+    {
+        return \App\User::where("username", "=", $username)->first();
     }
 
 }

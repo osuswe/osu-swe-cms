@@ -39,3 +39,8 @@ Route::get('/admin/get/events/all',function(){
     $eventsC=new \App\Http\Controllers\Admin\EventsController();
     echo $eventsC->all();
 });
+
+Route::post('admin/get/users/{username}',function($username){
+    $userC=new UsersController();
+    echo $userC->getProfileInfo($username);
+});
