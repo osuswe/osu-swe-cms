@@ -41,7 +41,7 @@ class EventsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required',]);
+        $this->validate($request, ['title' => 'required', 'date' => 'required', 'location' => 'required', 'description' => 'required', 'time_range' => 'required','event_code'=>'required']);
 
         Event::create($request->all());
 
