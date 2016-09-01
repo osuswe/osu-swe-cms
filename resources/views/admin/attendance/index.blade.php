@@ -4,14 +4,15 @@
     <div class="container">
 
         <h1>Attendance <a href="{{ url('/admin/attendance/create') }}" class="btn btn-primary btn-xs"
-                          title="Add New Attendance"><span class="glyphicon glyphicon-plus" aria-hidden="true"/></a></span>
+                          title="Add New Attendance"><span class="glyphicon glyphicon-plus"
+                                                           aria-hidden="true"></span></a>
         </h1>
         <div class="container">
             <div class="row">
                 <form id="searchForm" method="POST">
                     <h2>Search for users</h2>
                     <div class="input-group col-lg-3">
-                        <input id="userInput" type="text" class="form-control" placeholder="lastName.#"
+                        <input name="userInput" id="userInput" type="text" class="form-control" placeholder="lastName.#"
                                required="required">
                         <span class="input-group-btn">
         <button id="searchUsersBtn" class="btn btn-default" type="button">Go!</button>
@@ -72,15 +73,14 @@
 <script>
     window.onload = function () {
         var searchUsersBtn = document.getElementById('searchUsersBtn');
-        var userInput = document.getElementById('userInput').value;
+        var userInputBox = document.getElementById('userInput');
         var searchForm = document.getElementById("searchForm");
 
         searchUsersBtn.onclick = function () {
-            if (userInput.length > 0) {
-                var inputArray=userInput.split('.');
-                console.log(inputArray);
-                //searchForm.action = '/admin/page/userSearch/' + inputArray[0]+inputArray[1];
-                //searchForm.submit();
+            if (userInputBox.value.indexOf(".") != -1)//checking for . in username format
+            {
+                searchForm.action = '/admin/page/userSearch/';
+                searchForm.submit();
             }
         };
     };

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Event;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\Attendance;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -41,7 +41,7 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['user_id' => 'required', 'event_id' => 'required', ]);
+        $this->validate($request, ['user_id' => 'required', 'event_id' => 'required',]);
 
         Attendance::create($request->all());
 
@@ -53,7 +53,7 @@ class AttendanceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class AttendanceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -81,13 +81,13 @@ class AttendanceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['user_id' => 'required', 'event_id' => 'required', ]);
+        $this->validate($request, ['user_id' => 'required', 'event_id' => 'required',]);
 
         $attendance = Attendance::findOrFail($id);
         $attendance->update($request->all());
@@ -100,7 +100,7 @@ class AttendanceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -112,4 +112,25 @@ class AttendanceController extends Controller
 
         return redirect('admin/attendance');
     }
+
+
+    /**
+     * Get all events that a user has attended
+     * @param $userId
+     * @return json object containing all events for that user_id
+     */
+    public function eventsAttended($userId)
+    {
+        $attRecords=Attendance::where('user_id', '=', $userId)->get();
+
+        $events=array();
+        foreach ($attRecords as $attRecord) {
+            $event=Event::where('id','=',$attRecord->event_id)->first();
+            array_push($events,$event);
+        }
+
+
+        return $events;
+    }
+
 }

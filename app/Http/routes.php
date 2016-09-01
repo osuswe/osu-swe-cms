@@ -40,10 +40,16 @@ Route::get('/admin/get/events/all',function(){
     echo $eventsC->all();
 });
 
-Route::post('/admin/page/userSearch/{username}',function($username){
+Route::post('admin/get/users/{username}',function($username){
     $userC=new UsersController();
-    $result=$userC->getProfileInfo($username);
+    echo $userC->getProfileInfo($username);
+});
 
-    return view('userSearch',array('userInfo'=>$result));
+Route::post('/admin/page/userSearch/',function(\Illuminate\Http\Request $r){
+    $userC=new UsersController();
+    $result=$userC->getProfileInfo($r->userInput);
+    $attC=new \App\Http\Controllers\Admin\AttendanceController();
+    $events=$attC->eventsAttended($result->id);
+    return view('admin/attendance/userSearch',array('userInfo'=>$result,'events'=>$events));
 
 });
