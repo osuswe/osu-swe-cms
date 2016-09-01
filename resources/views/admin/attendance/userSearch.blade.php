@@ -17,7 +17,7 @@
         </tr>
 
     </table>
-    <h2>Events {{$userInfo->firstName}}  {{$userInfo->lastName}} has attended</h1>
+    <h2>Events {{$userInfo->firstName}}  {{$userInfo->lastName}} has attended</h2>
     <br>
     <table class="table table-responsive table-bordered">
         <tr>
