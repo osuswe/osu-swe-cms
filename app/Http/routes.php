@@ -40,9 +40,9 @@ Route::get('/admin/get/events/all',function(){
     echo $eventsC->all();
 });
 
-Route::post('admin/get/users/{username}',function($username){
+Route::post('/admin/get/userProfile',function(\Illuminate\Http\Request $r){
     $userC=new UsersController();
-    echo $userC->getProfileInfo($username);
+    echo $userC->getProfileInfo($r->username);
 });
 
 Route::post('/admin/page/userSearch/',function(\Illuminate\Http\Request $r){
