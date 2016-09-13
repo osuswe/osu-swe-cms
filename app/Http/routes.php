@@ -53,3 +53,8 @@ Route::post('/admin/page/userSearch/',function(\Illuminate\Http\Request $r){
     return view('admin/attendance/userSearch',array('userInfo'=>$result,'events'=>$events));
 
 });
+
+Route::post('/admin/add/attendanceRecord',function(\Illuminate\Http\Request $r){
+    $attC=new \App\Http\Controllers\Admin\AttendanceController();
+    $attC->store($r);
+});
