@@ -35,26 +35,26 @@ Route::post('/admin/login', ['middleware' => 'cors', function (\Illuminate\Http\
     echo $userC->login($r);
 }]);
 
-Route::get('/admin/get/events/all',function(){
+Route::get('/admin/get/events/all',['middleware' => 'cors', function(){
     $eventsC=new \App\Http\Controllers\Admin\EventsController();
     echo $eventsC->all();
-});
+}]);
 
-Route::post('/admin/get/userProfile',function(\Illuminate\Http\Request $r){
+Route::post('/admin/get/userProfile', ['middleware' => 'cors', function(\Illuminate\Http\Request $r){
     $userC=new UsersController();
     echo $userC->getProfileInfo($r->username);
-});
+}]);
 
-Route::post('/admin/page/userSearch/',function(\Illuminate\Http\Request $r){
+Route::post('/admin/page/userSearch/',['middleware' => 'cors',function(\Illuminate\Http\Request $r){
     $userC=new UsersController();
     $result=$userC->getProfileInfo($r->userInput);
     $attC=new \App\Http\Controllers\Admin\AttendanceController();
     $events=$attC->eventsAttended($result->id);
     return view('admin/attendance/userSearch',array('userInfo'=>$result,'events'=>$events));
 
-});
+}]);
 
-Route::post('/admin/add/attendanceRecord',function(\Illuminate\Http\Request $r){
+Route::post('/admin/add/attendanceRecord',['middleware' => 'cors',function(\Illuminate\Http\Request $r){
     $attC=new \App\Http\Controllers\Admin\AttendanceController();
     $attC->store($r);
-});
+}]);
