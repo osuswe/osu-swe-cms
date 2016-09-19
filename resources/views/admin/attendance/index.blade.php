@@ -79,7 +79,7 @@
         searchUsersBtn.onclick = function () {
             if (userInputBox.value.indexOf(".") != -1)//checking for . in username format
             {
-                searchForm.action = '/admin/page/userSearch/';
+                searchForm.action = '{{url('admin/page/userSearch')}}';
                 searchForm.submit();
             }
         };
