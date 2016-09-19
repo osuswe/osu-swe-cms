@@ -46,6 +46,7 @@ Route::post('/admin/get/userProfile', ['middleware' => 'cors', function(\Illumin
 }]);
 
 Route::post('/admin/page/userSearch/',['middleware' => 'cors',function(\Illuminate\Http\Request $r){
+    dd($r);
     $userC=new UsersController();
     $result=$userC->getProfileInfo($r->userInput);
     $attC=new \App\Http\Controllers\Admin\AttendanceController();
