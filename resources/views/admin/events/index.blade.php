@@ -52,7 +52,6 @@
         </div>
         <br>
     <div id="eventUserList">
-        hello
     </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -74,15 +73,27 @@
                     success: function (data) {
                         console.log(data);
                         var html="";
-                        html+="<h2>"+ title.text()+" attendance</h2><table><tr><th>Name</th></tr>";
+                        html+="<h2>"+ title.text()+" attendance</h2><table class='table table-bordered table-striped table-hover'>" +
+                                "<tr>" +
+                                "<th>First Name</th>" +
+                                "<th>Last Name</th>" +
+                                "<th>Username</th>"
+                                "</tr>";
                         var array=JSON.parse(data);
                         if(array.length==0){
                             html+="No attendance for this event";
                         }
                         else{
                             for(var i=0;i<array.length;i++){
-                                html+="<tr><td>"+array[i].firstName+" "+array[i].lastName+"</td></tr>";
+                                html+="<tr>" +
+                                        "<td>"+array[i].firstName+"</td>" +
+                                        "<td>"+array[i].lastName+"</td>" +
+                                        "<td>"+array[i].username+"</td>" +
+                                        "</tr>";
                             }
+                            html+="<tr><th>Total Attendance</th>" +
+                                    "<td>"+array.length+"</td></tr>";
+
                         }
                         html+="</table>";
                         $("#eventUserList").html(html);
