@@ -45,6 +45,12 @@ Route::post('/admin/get/userProfile', ['middleware' => 'cors', function(\Illumin
     echo $userC->getProfileInfo($r->username);
 }]);
 
+Route::post('/admin/get/allAttendees', ['middleware' => 'cors', function(\Illuminate\Http\Request $r){
+    $attC=new \App\Http\Controllers\Admin\AttendanceController();
+    echo $attC->getAllAttendees($r->eventId);
+}]);
+
+
 Route::post('/admin/page/userSearch/',['middleware' => 'cors',function(\Illuminate\Http\Request $r){
     $userC=new UsersController();
     $result=$userC->getProfileInfo($r->userInput);

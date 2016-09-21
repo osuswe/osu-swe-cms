@@ -6,6 +6,7 @@ use App\Event;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Attendance;
+use App\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Session;
@@ -130,7 +131,19 @@ class AttendanceController extends Controller
         }
 
 
-        return $events;
+        return json_encode($events);
+    }
+
+    public function getAllAttendees($eventId){
+        $attRecords=Attendance::where('event_id', '=', $eventId)->get();
+
+        $users=array();
+        foreach ($attRecords as $attRecord) {
+            $user=User::where('id','=',$attRecord->user_id)->first();
+            array_push($users,$user);
+        }
+
+        return json_encode($users);
     }
 
 }
