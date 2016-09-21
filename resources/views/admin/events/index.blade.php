@@ -22,7 +22,7 @@
                     {{-- */$x++;/* --}}
                     <tr>
                         <td>{{ $x }}</td>
-                        <td id="{{$item->id}}" class="titleLink">{{ $item->title }}</td>
+                        <td class="titleLink" id="{{$item->id}}">{{ $item->title }}</td>
                         <td>{{ $item->date }}</td>
                         <td>{{ $item->location }}</td>
                         <td>
@@ -43,13 +43,17 @@
                             ))!!}
                             {!! Form::close() !!}
                         </td>
+                        <br>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
             <div class="pagination-wrapper"> {!! $events->render() !!} </div>
         </div>
-
+        <br>
+    <div id="eventUserList">
+        hello
+    </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
@@ -61,13 +65,27 @@
              */
 
             $(".titleLink").click(function () {
-                var eventId = $(this).attr("id");
+                var title=$(this);
+                var eventId = title.attr("id");
                 $.ajax({
                     url: "{{url("admin/get/allAttendees")}}",
                     type: "POST",
                     data: {eventId: eventId},
                     success: function (data) {
                         console.log(data);
+                        var html="";
+                        html+="<h2>"+ title.text()+" attendance</h2><table><tr><th>Name</th></tr>";
+                        var array=JSON.parse(data);
+                        if(array.length==0){
+                            html+="No attendance for this event";
+                        }
+                        else{
+                            for(var i=0;i<array.length;i++){
+                                html+="<tr><td>"+array[i].firstName+" "+array[i].lastName+"</td></tr>";
+                            }
+                        }
+                        html+="</table>";
+                        $("#eventUserList").html(html);
                     },
                     error: function (err) {
                         console.log(err.responseText);
