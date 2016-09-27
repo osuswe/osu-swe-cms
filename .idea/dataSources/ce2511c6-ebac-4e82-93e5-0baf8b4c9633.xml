@@ -7,168 +7,179 @@
     <schema id="2" name="information_schema"/>
     <schema id="3" name="mysql"/>
     <schema id="4" name="performance_schema"/>
-    <schema id="5" name="phpmyadmin"/>
-    <schema id="6" name="test"/>
-    <table id="7" parent="1" name="attendances"/>
-    <table id="8" parent="1" name="events"/>
-    <table id="9" parent="1" name="links"/>
-    <table id="10" parent="1" name="migrations"/>
-    <table id="11" parent="1" name="password_resets"/>
-    <table id="12" parent="1" name="users"/>
-    <column id="13" parent="7" name="id">
+    <schema id="5" name="bewareWolves"/>
+    <schema id="6" name="blinkApp"/>
+    <schema id="7" name="csmclub"/>
+    <schema id="8" name="epoch"/>
+    <schema id="9" name="flixFastForward"/>
+    <schema id="10" name="forge"/>
+    <schema id="11" name="hoursTracker"/>
+    <schema id="12" name="Jumbler"/>
+    <schema id="13" name="purge"/>
+    <schema id="14" name="sql5123046"/>
+    <schema id="15" name="sys"/>
+    <schema id="16" name="testDB"/>
+    <schema id="17" name="vincentDB"/>
+    <table id="18" parent="1" name="attendances"/>
+    <table id="19" parent="1" name="events"/>
+    <table id="20" parent="1" name="links"/>
+    <table id="21" parent="1" name="migrations"/>
+    <table id="22" parent="1" name="password_resets"/>
+    <table id="23" parent="1" name="users"/>
+    <column id="24" parent="18" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="14" parent="7" name="user_id">
+    <column id="25" parent="18" name="user_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="15" parent="7" name="event_id">
+    <column id="26" parent="18" name="event_id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="16" parent="7" name="created_at">
+    <column id="27" parent="18" name="created_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <column id="17" parent="7" name="updated_at">
+    <column id="28" parent="18" name="updated_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <key id="18" parent="7" name="PRIMARY">
+    <key id="29" parent="18" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="19" parent="8" name="id">
+    <column id="30" parent="19" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="20" parent="8" name="title">
+    <column id="31" parent="19" name="title">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="21" parent="8" name="date">
+    <column id="32" parent="19" name="date">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="22" parent="8" name="location">
+    <column id="33" parent="19" name="location">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="23" parent="8" name="description">
+    <column id="34" parent="19" name="description">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="24" parent="8" name="time_range">
+    <column id="35" parent="19" name="time_range">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="25" parent="8" name="created_at">
+    <column id="36" parent="19" name="created_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <column id="26" parent="8" name="updated_at">
+    <column id="37" parent="19" name="updated_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <column id="27" parent="8" name="event_code">
+    <column id="38" parent="19" name="event_code">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <key id="28" parent="8" name="PRIMARY">
+    <key id="39" parent="19" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="29" parent="9" name="id">
+    <column id="40" parent="20" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="30" parent="9" name="link">
+    <column id="41" parent="20" name="link">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="31" parent="9" name="created_at">
+    <column id="42" parent="20" name="created_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <column id="32" parent="9" name="updated_at">
+    <column id="43" parent="20" name="updated_at">
       <data-type>timestamp|0</data-type>
     </column>
-    <key id="33" parent="9" name="PRIMARY">
+    <key id="44" parent="20" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="34" parent="10" name="migration">
+    <column id="45" parent="21" name="migration">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="35" parent="10" name="batch">
+    <column id="46" parent="21" name="batch">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="36" parent="11" name="email">
+    <column id="47" parent="22" name="email">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="37" parent="11" name="token">
+    <column id="48" parent="22" name="token">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="38" parent="11" name="created_at">
+    <column id="49" parent="22" name="created_at">
       <mandatory>1</mandatory>
       <data-type>timestamp|0</data-type>
       <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <index id="39" parent="11" name="password_resets_email_index">
+    <index id="50" parent="22" name="password_resets_email_index">
       <columns>email</columns>
       <desc-columns></desc-columns>
     </index>
-    <index id="40" parent="11" name="password_resets_token_index">
+    <index id="51" parent="22" name="password_resets_token_index">
       <columns>token</columns>
       <desc-columns></desc-columns>
     </index>
-    <column id="41" parent="12" name="id">
+    <column id="52" parent="23" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="42" parent="12" name="username">
+    <column id="53" parent="23" name="username">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="43" parent="12" name="password">
+    <column id="54" parent="23" name="password">
       <mandatory>1</mandatory>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="44" parent="12" name="officer">
+    <column id="55" parent="23" name="officer">
       <mandatory>1</mandatory>
       <data-type>tinyint(1)|0</data-type>
     </column>
-    <column id="45" parent="12" name="year">
+    <column id="56" parent="23" name="major">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="57" parent="23" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="58" parent="23" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="59" parent="23" name="phone">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="60" parent="23" name="firstName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="61" parent="23" name="lastName">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="62" parent="23" name="graduationYear">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="46" parent="12" name="major">
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="47" parent="12" name="created_at">
-      <data-type>timestamp|0</data-type>
-    </column>
-    <column id="48" parent="12" name="updated_at">
-      <data-type>timestamp|0</data-type>
-    </column>
-    <column id="49" parent="12" name="phone">
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="50" parent="12" name="firstName">
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="51" parent="12" name="lastName">
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <key id="52" parent="12" name="PRIMARY">
+    <key id="63" parent="23" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>

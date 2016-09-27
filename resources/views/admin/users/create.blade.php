@@ -47,11 +47,11 @@
                 {!! $errors->first('officer', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
-        <div class="form-group {{ $errors->has('year') ? 'has-error' : ''}}">
-            {!! Form::label('year', 'Year', ['class' => 'col-sm-3 control-label']) !!}
+        <div class="form-group {{ $errors->has('graduationYear') ? 'has-error' : ''}}">
+            {!! Form::label('graduationYear', 'Graduation Year', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::number('year', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                {!! $errors->first('year', '<p class="help-block">:message</p>') !!}
+                {!! Form::number('graduationYear', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! $errors->first('graduationYear', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
         <div class="form-group {{ $errors->has('major') ? 'has-error' : ''}}">
