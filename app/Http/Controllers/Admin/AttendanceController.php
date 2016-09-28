@@ -131,7 +131,7 @@ class AttendanceController extends Controller
         }
 
 
-        return json_encode($events);
+        return $events;
     }
 
     public function getAllAttendees($eventId){

@@ -10,6 +10,8 @@
             <th>Total Attendance</th>
         </tr>
         <tr>
+            @if(isset($userInfo) && isset($events))
+
             <td>{{$userInfo->id}}</td>
             <td>{{$userInfo->firstName}}  {{$userInfo->lastName}}</td>
             <td>{{$userInfo->username}}</td>
@@ -41,5 +43,6 @@
 
             @endforeach
 
+        @endif
     </table>
 @endsection

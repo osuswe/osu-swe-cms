@@ -133,7 +133,7 @@ class UsersController extends Controller
      */
     public function getProfileInfo($username)
     {
-        return \App\User::where("username", "=", $username)->first();
+        return User::where("username", "=", $username)->first();
     }
 
 }
