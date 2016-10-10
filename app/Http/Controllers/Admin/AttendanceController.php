@@ -39,6 +39,8 @@ class AttendanceController extends Controller
         $this->validate($request, ['user_id' => 'required', 'event_id' => 'required',]);
 
         Attendance::create($request->all());
+
+        return "success";
     }
 
     /**
