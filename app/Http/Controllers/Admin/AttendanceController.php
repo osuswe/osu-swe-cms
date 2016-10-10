@@ -35,6 +35,12 @@ class AttendanceController extends Controller
         return view('admin.attendance.create');
     }
 
+    public function save_attendance_record(Request $request){
+        $this->validate($request, ['user_id' => 'required', 'event_id' => 'required',]);
+
+        Attendance::create($request->all());
+    }
+
     /**
      * Store a newly created resource in storage.
      *
