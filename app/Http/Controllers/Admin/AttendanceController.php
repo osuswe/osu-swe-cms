@@ -154,4 +154,20 @@ class AttendanceController extends Controller
         return json_encode($users);
     }
 
+    /**
+     * Checks if a user has attended a particular event
+     * returns true if they have, false if they haven't
+     */
+    public function hasAttended(Request $r){
+        $result=Attendance::where("user_id","=",$r->user_id)->where("event_id","=",$r->event_id)->first();
+        if($result){
+            return "true";
+        }
+        else{
+            return "false";
+        }
+
+    }
+
+
 }

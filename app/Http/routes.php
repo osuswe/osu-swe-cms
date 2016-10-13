@@ -65,6 +65,11 @@ Route::post('/admin/page/userSearch/',['middleware' => 'cors',function(\Illumina
 
 }]);
 
+Route::post('admin/get/hasAttended',['middleware' => 'cors', function(\Illuminate\Http\Request $r){
+    $attC=new \App\Http\Controllers\Admin\AttendanceController();
+    echo $attC->hasAttended($r);
+}]);
+
 Route::post('/admin/add/attendanceRecord',['middleware' => 'cors',function(\Illuminate\Http\Request $r){
     $attC=new \App\Http\Controllers\Admin\AttendanceController();
     echo $attC->save_attendance_record($r);
