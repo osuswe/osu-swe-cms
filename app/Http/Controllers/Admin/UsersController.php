@@ -101,11 +101,11 @@ class UsersController extends Controller
      * Update the specified resource in storage.
      *
      * @param  int  $id
-     *
-     * @return void
+     * @param request $request
+     * @return string
      */
     public function update_user($id, Request $request){
-        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required']);
+        $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'email']);
 
         $user = User::findOrFail($id);
         $user->update($request->all());
