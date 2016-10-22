@@ -107,7 +107,7 @@ class UsersController extends Controller
         $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required',
             'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'required']);
 
-        $user = User::findOrFail($request->id);
+        $user = User::where("id", "=",$request->id);
         $user->update($request->all());
         return "profile_updated";
 
