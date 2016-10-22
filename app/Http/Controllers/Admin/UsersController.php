@@ -98,6 +98,21 @@ class UsersController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     *
+     * @return void
+     */
+    public function update_user($id, Request $request){
+        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required']);
+
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
