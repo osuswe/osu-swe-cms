@@ -105,7 +105,7 @@ class UsersController extends Controller
      */
     public function update_user(Request $request){
         $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required',
-            'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'email']);
+            'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'required']);
 
         $user = User::findOrFail($request->id);
         $user->update($request->all());
