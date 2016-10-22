@@ -109,6 +109,7 @@ class UsersController extends Controller
 
         $user = User::findOrFail($id);
         $user->update($request->all());
+        return "profile_updated";
 
     }
 

@@ -75,6 +75,5 @@ Route::post('/admin/add/attendanceRecord', ['middleware' => 'cors', function (\I
 
 Route::post("/admin/update/user", ['middleware' => 'cors', function (\Illuminate\Http\Request $r) {
     $userC=new UsersController();
-    $userC->updateUser($r->id, $r);
-
+    echo $userC->updateUser($r->id, $r);
 }]);
