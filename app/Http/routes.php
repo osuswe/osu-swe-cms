@@ -73,7 +73,7 @@ Route::post('/admin/add/attendanceRecord' , function (\Illuminate\Http\Request $
     echo $attC->save_attendance_record($r);
 });
 
-Route::post("/admin/update/user" , function (\Illuminate\Http\Request $r) {
+Route::post("/admin/updateUser" , function (\Illuminate\Http\Request $r) {
     $userC=new UsersController();
     echo $userC->update_user($r);
 });
