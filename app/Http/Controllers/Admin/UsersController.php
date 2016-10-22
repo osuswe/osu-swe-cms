@@ -100,14 +100,14 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
      * @param request $request
      * @return string
      */
-    public function update_user($id, Request $request){
-        $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'email']);
+    public function update_user(Request $request){
+        $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required',
+            'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'email']);
 
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($request->id);
         $user->update($request->all());
         return "profile_updated";
 
@@ -132,6 +132,7 @@ class UsersController extends Controller
     /**
      * Handle user authentication
      * @param Request $request
+     * @return result
      */
     public function login(Request $request){
         $user=User::where("username","=",$request->username)->first();
