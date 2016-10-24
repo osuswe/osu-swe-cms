@@ -8,7 +8,16 @@
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>S.No</th><th> Username </th><th> Password </th><th> Officer </th><th>Actions</th>
+                    <th>S.No</th>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> Username </th>
+                    <th> Password </th>
+                    <th> Officer </th>
+                    <th> Major </th>
+                    <th> Phone # </th>
+                    <td> Graduation Year</td>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,7 +26,14 @@
                 {{-- */$x++;/* --}}
                 <tr>
                     <td>{{ $x }}</td>
-                    <td>{{ $item->username }}</td><td>{{ $item->password }}</td><td>{{ $item->officer }}</td>
+                    <td>{{ $item->firstName }}</td>
+                    <td>{{ $item->lastName }}</td>
+                    <td>{{ $item->username }}</td>
+                    <td>{{ $item->password }}</td>
+                    <td>{{ $item->officer }}</td>
+                    <td>{{ $item->major }}</td>
+                    <td>{{ $item->phone }}</td>
+                    <td>{{ $item->graduationYear }}</td>
                     <td>
                         <a href="{{ url('/admin/users/' . $item->id) }}" class="btn btn-success btn-xs" title="View User"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
                         <a href="{{ url('/admin/users/' . $item->id . '/edit') }}" class="btn btn-primary btn-xs" title="Edit User"><span class="glyphicon glyphicon-pencil" aria-hidden="true"/></a>

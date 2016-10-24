@@ -46,6 +46,13 @@
                     {!! $errors->first('time_range', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
+            <div class="form-group {{ $errors->has('event_code') ? 'has-error' : ''}}">
+                {!! Form::label('event_code', 'Event Code', ['class' => 'col-sm-3 control-label']) !!}
+                <div class="col-sm-6">
+                    {!! Form::text('event_code', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! $errors->first('event_code', '<p class="help-block">:message</p>') !!}
+                </div>
+            </div>
 
 
     <div class="form-group">

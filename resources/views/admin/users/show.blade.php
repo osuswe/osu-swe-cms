@@ -24,7 +24,14 @@
                 <tr>
                     <th>ID</th><td>{{ $user->id }}</td>
                 </tr>
-                <tr><th> Username </th><td> {{ $user->username }} </td></tr><tr><th> Password </th><td> {{ $user->password }} </td></tr><tr><th> Officer </th><td> {{ $user->officer }} </td></tr>
+                <tr><th> First Name </th><td> {{ $user->firstName }} </td></tr>
+                <tr><th> Last Name </th><td> {{ $user->lastName }} </td></tr>
+                <tr><th> Username </th><td> {{ $user->username }} </td></tr>
+                <tr><th> Password </th><td> {{ $user->password }} </td></tr>
+                <tr><th> Officer </th><td> {{ $user->officer }} </td></tr>
+                <tr><th> Major </th><td> {{ $user->major }} </td></tr>
+                <tr><th> Phone # </th><td> {{ $user->phone }} </td></tr>
+                <tr><th> Graduation Year </th><td> {{ $user->graduationYear }} </td></tr>
             </tbody>
         </table>
     </div>

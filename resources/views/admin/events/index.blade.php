@@ -13,6 +13,9 @@
                     <th> Title</th>
                     <th> Date</th>
                     <th> Location</th>
+                    <th> Description</th>
+                    <th> Time Range</th>
+                    <th> Event Code</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -25,6 +28,9 @@
                         <td class="titleLink" id="{{$item->id}}">{{ $item->title }}</td>
                         <td>{{ $item->date }}</td>
                         <td>{{ $item->location }}</td>
+                        <td>{{ $item->description }}</td>
+                        <td>{{ $item->time_range }}</td>
+                        <td>{{ $item->event_code }}</td>
                         <td>
                             <a href="{{ url('/admin/events/' . $item->id) }}" class="btn btn-success btn-xs"
                                title="View Event"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
