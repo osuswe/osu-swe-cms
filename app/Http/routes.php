@@ -77,3 +77,8 @@ Route::post("/admin/user/update" , function (\Illuminate\Http\Request $r) {
     $userC=new UsersController();
     echo $userC->update_user($r);
 });
+
+Route::get('/admin/get/users',function(){
+   $userC=new UsersController();
+    echo $userC->getUsers();
+});

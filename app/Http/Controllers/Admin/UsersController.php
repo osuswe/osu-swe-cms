@@ -152,4 +152,13 @@ class UsersController extends Controller
         return User::where("username", "=", $username)->first();
     }
 
+    /**
+     * Returns all users from database
+     * @return \Illuminate\Database\Eloquent\Collection|static[] all users
+     */
+    public function getUsers(){
+        return User::all();
+    }
+
+
 }
