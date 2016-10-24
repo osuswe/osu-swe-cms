@@ -50,6 +50,13 @@
                 {!! $errors->first('officer', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
+        <div class="form-group {{ $errors->has('phone') ? 'has-error' : ''}}">
+            {!! Form::label('phone', 'Phone #', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::number('phone', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! $errors->first('phone', '<p class="help-block">:message</p>') !!}
+            </div>
+        </div>
         <div class="form-group {{ $errors->has('graduationYear') ? 'has-error' : ''}}">
             {!! Form::label('graduationYear', 'Graduation Year', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
