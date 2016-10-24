@@ -41,7 +41,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required']);
+        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required']);
 
         User::create($request->all());
 
@@ -53,7 +53,7 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -67,7 +67,7 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -81,13 +81,13 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
     public function update($id, Request $request)
     {
-        $this->validate($request, ['username' => 'required', 'firstName'=>'required', 'lastName'=>'required','graduationYear' => 'required', 'major' => 'required']);
+        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required']);
 
         $user = User::findOrFail($id);
         $user->update($request->all());
@@ -103,11 +103,12 @@ class UsersController extends Controller
      * @param request $request
      * @return string
      */
-    public function update_user(Request $request){
-        $this->validate($request, ['id'=>'required','username' => 'required', 'firstName'=>'required',
-            'lastName'=>'required','graduationYear' => 'required', 'major' => 'required', 'phone'=>'required','email'=>'required']);
+    public function update_user(Request $request)
+    {
+        $this->validate($request, ['id' => 'required', 'username' => 'required', 'firstName' => 'required',
+            'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'phone' => 'required', 'email' => 'required']);
 
-        User::where("id","=",$request->id)->update($request->all());
+        User::where("id", "=", $request->id)->update($request->all());
         return "profile_updated";
 
     }
@@ -115,7 +116,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return void
      */
@@ -133,12 +134,12 @@ class UsersController extends Controller
      * @param Request $request
      * @return result
      */
-    public function login(Request $request){
-        $user=User::where("username","=",$request->username)->first();
-        if($user && $user->password==$request->password){
+    public function login(Request $request)
+    {
+        $user = User::where("username", "=", $request->username)->first();
+        if ($user && $user->password == $request->password) {
             return "true";
-        }
-        else{
+        } else {
             return "false";
         }
 
@@ -156,8 +157,10 @@ class UsersController extends Controller
      * Returns all users from database
      * @return \Illuminate\Database\Eloquent\Collection|static[] all users
      */
-    public function getUsers(){
-        return User::all();
+    public function getUsers()
+    {
+        return User::where('id', '>', 0)->orderBy('lastName', 'desc')
+            ->get();
     }
 
 
