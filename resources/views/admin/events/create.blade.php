@@ -74,6 +74,37 @@
             console.log(document.getElementById('event_code').value);
         };
 
+
+        function scheduleNotification(){
+
+            console.log("in scheduling process...");
+
+            var notificationObj={
+                "app_id": "a263afad-afe2-471e-b0da-a9d0467b9cb3",
+                "included_segments": ["All"],
+                "contents": {"en": "English Message"},
+            };
+
+            var headers={
+                "Content-Type": "application/json; charset=utf-8",
+                "Authorization": "Basic N2I1NDVmNjAtZDBkMS00N2ExLTkwY2YtODczMTQ4ZmZlYTJm"
+            };
+
+            $.ajax({
+                url: "https://onesignal.com/api/v1/notifications",
+                data: notificationObj,
+                dataType: "json",
+                headers: headers,
+                success:function(data){
+                    console.log("Notification scheduled");
+                },
+                error:function(err){
+                    console.log(err);
+                }
+
+            });
+        }
+
         /**
          * Generates 4 random digits to make code
          *
