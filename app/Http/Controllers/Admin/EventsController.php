@@ -46,7 +46,8 @@ class EventsController extends Controller
         Event::create($request->all());
 
         //schedule push notification
-        $this->sendMessage($request->title,$request->date,$request->time_range,$request->location);
+        $this->sendMessage($request->title,$request->date,$request->time_range,
+            $request->location, $request->notification_send_time);
 
         Session::flash('flash_message', 'Event added!');
 
@@ -122,9 +123,10 @@ class EventsController extends Controller
      * @param $eventDate
      * @param $eventTime
      * @param $eventLocation
+     * @param $notificationDeliveryTime
      * @return mixed
      */
-    function sendMessage($eventName,$eventDate, $eventTime, $eventLocation)
+    function sendMessage($eventName,$eventDate, $eventTime, $eventLocation, $notificationDeliveryTime)
     {
         $content = array(
             "en" => 'Event: ' .  $eventName . "\n" .
@@ -143,7 +145,8 @@ class EventsController extends Controller
             'included_segments' => array('Active Users'),
             //'data' => array("foo" => "bar"),
             'contents' => $content,
-            'headings' => $heading
+            'headings' => $heading,
+            'send_after' => $notificationDeliveryTime
         );
 
         $fields = json_encode($fields);
