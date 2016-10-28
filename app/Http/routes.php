@@ -82,3 +82,8 @@ Route::get('/admin/get/users',function(){
    $userC=new UsersController();
     echo $userC->getUsers();
 });
+
+Route::get('/admin/get/links',function(){
+    $linksC=new \App\Http\Controllers\Admin\LinksController();
+    echo $linksC->all();
+});

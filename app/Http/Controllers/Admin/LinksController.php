@@ -41,7 +41,7 @@ class LinksController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['id' => 'required', 'link' => 'required', ]);
+        $this->validate($request, ['link' => 'required', ]);
 
         Link::create($request->all());
 
@@ -111,5 +111,9 @@ class LinksController extends Controller
         Session::flash('flash_message', 'Link deleted!');
 
         return redirect('admin/links');
+    }
+
+    public function all(){
+        return Link::all();
     }
 }
