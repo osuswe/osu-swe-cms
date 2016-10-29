@@ -140,12 +140,15 @@ class EventsController extends Controller
             "en" => "Upcoming SWE Event"
         );
 
+        $icon="icon"; //extension left off; files in the resources folder in ionic
+
         $fields = array(
             'app_id' => "a263afad-afe2-471e-b0da-a9d0467b9cb3",
             'included_segments' => array('Active Users'),
             //'data' => array("foo" => "bar"),
             'contents' => $content,
             'headings' => $heading,
+            'small_icon' => $icon,
             'send_after' => $notificationDeliveryTime
         );
 

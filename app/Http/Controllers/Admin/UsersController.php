@@ -109,8 +109,7 @@ class UsersController extends Controller
             'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'phone' => 'required', 'email' => 'required']);
 
         $user=User::where("id", "=", $request->id)->first();
-        $user->firstName=$request->firstName;
-        $user->save();
+        $user->update($request->all());
 
         return "profile_updated";
 
