@@ -103,15 +103,12 @@ class UsersController extends Controller
      * @param request $request
      * @return string
      */
-    public function update_user(Request $request)
+    public function changeProfile(Request $request)
     {
-        $this->validate($request, ['id' => 'required', 'username' => 'required', 'firstName' => 'required',
-            'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'phone' => 'required', 'email' => 'required']);
-
         $user=User::where("id", "=", $request->id)->first();
-        $user->update($request->all());
-
-        return "profile_updated";
+        if($user) {
+            $user->update($request->all());
+        }
 
     }
 
