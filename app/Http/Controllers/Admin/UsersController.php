@@ -108,7 +108,12 @@ class UsersController extends Controller
         $user=User::where("id", "=", $request->id)->first();
         if($user) {
             $user->update($request->all());
+            echo "success";
         }
+        else{
+            echo "failure";
+        }
+
 
     }
 
