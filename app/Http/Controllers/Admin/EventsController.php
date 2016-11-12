@@ -132,7 +132,8 @@ class EventsController extends Controller
             "en" => 'Event: ' .  $eventName . "\n" .
                      'Date: ' . $eventDate . "\n" .
                      'Time: ' . $eventTime . "\n" .
-                     'Location: ' . $eventLocation
+                     'Location: ' . $eventLocation . "\n" .
+                        "SWE you there!"
 
         );
 
