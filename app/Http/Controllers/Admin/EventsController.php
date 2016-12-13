@@ -114,6 +114,8 @@ class EventsController extends Controller
 
         Session::flash('flash_message', 'Event deleted!');
 
+        sendEventCancelledMessage($eventName);
+
         return redirect('admin/events');
     }
 
@@ -171,6 +173,53 @@ class EventsController extends Controller
         curl_close($ch);
 
         return $response;
+    }
+
+    /*
+    Send notification to users when event has been cancelled
+    */
+    public function sendEventCancelledMessage($eventname){
+
+                $content = array(
+            "en" => "The $eventName event has been cancelled. For more info please contact a SWE officer."
+
+        );
+
+        $heading =array(
+            "en" => "SWE Event Cancellation"
+        );
+
+        $icon="icon"; //extension left off; files in the resources folder in ionic
+
+        $fields = array(
+            'app_id' => "a263afad-afe2-471e-b0da-a9d0467b9cb3",
+            'included_segments' => array('Active Users'),
+            //'data' => array("foo" => "bar"),
+            'contents' => $content,
+            'headings' => $heading,
+            'small_icon' => $icon,
+            'send_after' => $notificationDeliveryTime
+        );
+
+        $fields = json_encode($fields);
+        print("\nJSON sent:\n");
+        print($fields);
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
+            'Authorization: Basic N2I1NDVmNjAtZDBkMS00N2ExLTkwY2YtODczMTQ4ZmZlYTJm'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return $reponse;
+
     }
 
     public function all()
