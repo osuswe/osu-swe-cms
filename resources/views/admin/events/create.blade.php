@@ -149,6 +149,14 @@
             if (endAMPM.toLowerCase() == "pm" && endHours >= 12) endHours = endHours - 12;
             // if (endAMPM.toLowerCase() == "am" && endHours == 12) endHours = endHours - 12;
 
+            //add extra 0 for minute field values that are between 0 and 9
+            
+            if(startMinutes<=9){
+                startMinutes='0'+startMinutes;
+            }
+            if(endMinutes<=9){
+                endMinutes='0'+endMinutes;
+            }
 
             //build time_range from start_time and end_time fields
             document.getElementById('time_range').value=startHours+":"+startMinutes+" "+startAMPM+"-"+endHours+":"+endMinutes+" " + endAMPM;
