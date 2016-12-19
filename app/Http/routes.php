@@ -24,7 +24,8 @@ Route::resource('admin/links', 'Admin\\LinksController');
 Route::resource('admin/attendance', 'Admin\\AttendanceController');
 
 Route::post('/admin/manage/login', function (\Illuminate\Http\Request $r) {
-
+    $userC = new UsersController();
+    $userC->cmsLogin($r);
 });
 
 

@@ -31,7 +31,7 @@
         <div class="form-group {{ $errors->has('password') ? 'has-error' : ''}}">
             {!! Form::label('password', 'Password', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'id'=>'passwordBox', 'readonly' => 'readonly']) !!}
                 {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
@@ -117,6 +117,11 @@
     <script>
         window.onload = function () {
             var selectMajor = document.getElementById('selectMajor');
+            var passwordBox = document.getElementById('passwordBox');
+
+            //set static password for all users
+            passwordBox.value = "osu-swe";
+
             var majorBox = document.getElementById('majorBox');
             //majorBox=selectMajor.options[selectMajor.selectedIndex].value;
             selectMajor.onchange = function () {

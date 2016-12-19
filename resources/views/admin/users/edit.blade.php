@@ -34,20 +34,8 @@
         <div class="form-group {{ $errors->has('password') ? 'has-error' : ''}}">
             {!! Form::label('password', 'Password', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! Form::text('password', null, ['class' => 'form-control', 'required' => 'required', 'readonly'=>'readonly']) !!}
                 {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
-            </div>
-        </div>
-        <div class="form-group {{ $errors->has('officer') ? 'has-error' : ''}}">
-            {!! Form::label('officer', 'Officer', ['class' => 'col-sm-3 control-label']) !!}
-            <div class="col-sm-6">
-                <div class="checkbox">
-                    <label>{!! Form::radio('officer', '1') !!} Yes</label>
-                </div>
-                <div class="checkbox">
-                    <label>{!! Form::radio('officer', '0', true) !!} No</label>
-                </div>
-                {!! $errors->first('officer', '<p class="help-block">:message</p>') !!}
             </div>
         </div>
         <div class="form-group {{ $errors->has('phone') ? 'has-error' : ''}}">

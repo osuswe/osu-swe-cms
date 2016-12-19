@@ -41,7 +41,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required']);
+        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'password' => 'required']);
 
         User::create($request->all());
 
@@ -105,12 +105,11 @@ class UsersController extends Controller
      */
     public function changeProfile(Request $request)
     {
-        $user=User::where("id", "=", $request->id)->first();
-        if($user) {
+        $user = User::where("id", "=", $request->id)->first();
+        if ($user) {
             $user->update($request->all());
             echo "success";
-        }
-        else{
+        } else {
             echo "failure";
         }
 
@@ -165,6 +164,32 @@ class UsersController extends Controller
     {
         return User::where('id', '>', 0)->orderBy('lastName', 'asc')
             ->get();
+    }
+
+    public function cmsLogin(Request $request)
+    {
+
+        $username = $request->username;
+        $password = $request->password;
+
+        $foundUser = User::where('username', '=', $username)->where('officer', '=', 1)->first();
+
+        if($foundUser) {
+            if ($password == "]830@):.7mFZr;Z") {
+                //return view('admin.users.index');
+                //redirect("admin/users");
+            } else {
+                //return view('login', ['status' => 'failed']);
+                return "hello world";
+
+            }
+        }
+        else{
+            return view('login', ['status' => 'failed']);
+        }
+
+
+
     }
 
 
