@@ -110,11 +110,13 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {
+        //send notification before deleting event
+        $event = Event::findOrFail($id);
+        $this->sendEventCancelledMessage($event->title);
+
         Event::destroy($id);
 
         Session::flash('flash_message', 'Event deleted!');
-
-        sendEventCancelledMessage($eventName);
 
         return redirect('admin/events');
     }
@@ -128,7 +130,7 @@ class EventsController extends Controller
      * @param $notificationDeliveryTime
      * @return mixed
      */
-    function sendMessage($eventName,$eventDate, $eventTime, $eventLocation, $notificationDeliveryTime)
+    public function sendMessage($eventName,$eventDate, $eventTime, $eventLocation, $notificationDeliveryTime)
     {
         $content = array(
             "en" => 'Event: ' .  $eventName . "\n" .
@@ -178,7 +180,7 @@ class EventsController extends Controller
     /*
     Send notification to users when event has been cancelled
     */
-    public function sendEventCancelledMessage($eventname){
+    public function sendEventCancelledMessage($eventName){
 
                 $content = array(
             "en" => "The $eventName event has been cancelled. For more info please contact a SWE officer."
@@ -198,7 +200,7 @@ class EventsController extends Controller
             'contents' => $content,
             'headings' => $heading,
             'small_icon' => $icon,
-            'send_after' => $notificationDeliveryTime
+            //'send_after' => $notificationDeliveryTime
         );
 
         $fields = json_encode($fields);
@@ -218,7 +220,7 @@ class EventsController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
 
-        return $reponse;
+        return $response;
 
     }
 
