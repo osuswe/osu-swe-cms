@@ -41,20 +41,15 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'password' => 'required']);
+
+        User::create($request->all());
 
         Session::flash('flash_message', 'User added!');
 
         return redirect('admin/users');
     }
-
-    public function signup(Request $request){
-        $this->validate($request, ['username' => 'required', 'firstName' => 'required', 'lastName' => 'required', 'graduationYear' => 'required', 'major' => 'required', 'password' => 'required']);
-
-        User::create($request->all());
-
-        echo "true";
-
-    }
+    
 
     /**
      * Display the specified resource.
