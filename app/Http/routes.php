@@ -28,6 +28,7 @@ Route::post('/admin/manage/login', function (\Illuminate\Http\Request $r) {
     $userC->cmsLogin($r);
 });
 
+Route::post('/admin/users/signup','UsersController@signup');
 
 //use cors middleware to make cross origin requests
 Route::post('/admin/storeUser',  function (\Illuminate\Http\Request $r) {
