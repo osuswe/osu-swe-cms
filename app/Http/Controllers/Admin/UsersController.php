@@ -49,7 +49,12 @@ class UsersController extends Controller
 
         return redirect('admin/users');
     }
-    
+
+    public function signup(Request $request){
+        User::create($request->all());
+        echo "true";
+    }
+
 
     /**
      * Display the specified resource.
