@@ -182,16 +182,15 @@ class UsersController extends Controller
 
         if($foundUser) {
             if ($password == "]830@):.7mFZr;Z") {
-                //return view('admin.users.index');
-                //redirect("admin/users");
+                return redirect('admin/users/');
             } else {
-                //return view('login', ['status' => 'failed']);
-                return "hello world";
+                return view('login', ['status' => 'You entered the wrong password.']);
 
             }
         }
         else{
-            return view('login', ['status' => 'failed']);
+            return view('login', ['status' => 'That user does not exist in the database.']);
+
         }
 
 

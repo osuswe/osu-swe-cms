@@ -47,10 +47,12 @@
     <div class="content">
         <h1 class="title">SWE CMS Login</h1>
 
-        @if(isset($status) && $status =='failed')
+        @if(isset($status))
 
             <div class="alert alert-danger">
-                <strong>Login Failed</strong>Please try again.
+                <strong>Login Failed</strong>
+                <br>
+                {{$status}} Please try again.
             </div>
 
         @endif
