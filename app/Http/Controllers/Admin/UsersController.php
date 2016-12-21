@@ -50,7 +50,8 @@ class UsersController extends Controller
         return redirect('admin/users');
     }
 
-    public function signup(Request $request){
+    public function signup(Request $request)
+    {
         User::create($request->all());
         echo "true";
     }
@@ -180,19 +181,22 @@ class UsersController extends Controller
 
         $foundUser = User::where('username', '=', $username)->where('officer', '=', 1)->first();
 
-        if($foundUser) {
+        if ($foundUser) {
             if ($password == "]830@):.7mFZr;Z") {
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+                $_SESSION['admin'] = $username;
                 return redirect('admin/users/');
+                //start session for admin on successful login
             } else {
                 return view('login', ['status' => 'You entered the wrong password.']);
 
             }
-        }
-        else{
-            return view('login', ['status' => 'That user does not exist in the database.']);
+        } else {
+            return view('login', ['status' => 'That user does not exist in the database or does not have the right privileges.']);
 
         }
-
 
 
     }
