@@ -1,3 +1,6 @@
+@if(isset($_SESSION['admin']))
+
+
 @extends('layouts.app')
 
 @section('content')
@@ -59,3 +62,9 @@
 
 </div>
 @endsection
+
+@else
+
+    <script>window.open('/','_self');</script>
+
+@endif

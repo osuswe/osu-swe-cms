@@ -24,7 +24,6 @@ Route::get('/', function () {
 
 Route::post('/admin/manage/login', 'Admin\\UsersController@cmsLogin');
 
-if (isset($_SESSION['admin'])) {
     Route::resource('admin/events', 'Admin\\EventsController');
     Route::resource('admin/users', 'Admin\\UsersController');
     Route::resource('admin/links', 'Admin\\LinksController');
@@ -92,5 +91,3 @@ if (isset($_SESSION['admin'])) {
         $linksC = new \App\Http\Controllers\Admin\LinksController();
         echo $linksC->all();
     });
-
-}

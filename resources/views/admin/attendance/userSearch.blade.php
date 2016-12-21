@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@if(isset($_SESSION['admin']))
+
+
+
+    @extends('layouts.app')
 
 @section('content')
     <h2>User Search Results</h2>
@@ -46,3 +50,9 @@
         @endif
     </table>
 @endsection
+
+@else
+
+    <script>window.open('/','_self');</script>
+
+@endif

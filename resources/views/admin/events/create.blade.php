@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@if(isset($_SESSION['admin']))
+
+
+
+    @extends('layouts.app')
 
 @section('content')
     <div class="container">
@@ -181,3 +185,9 @@
     </script>
 
 @endsection
+
+@else
+
+    <script>window.open('/','_self');</script>
+
+@endif
