@@ -147,10 +147,10 @@
             console.log("Start am/pm: " + startAMPM);
 
             //reformat time_range to be displayable
-            if (startAMPM.toLowerCase() == "pm" && startHours >= 12) startHours = startHours - 12;
+            if (startAMPM.toLowerCase() == "pm" && startHours > 12) startHours = startHours - 12;
             // if (startAMPM.toLowerCase() == "am" && startHours == 12) startHours = startHours - 12;
 
-            if (endAMPM.toLowerCase() == "pm" && endHours >= 12) endHours = endHours - 12;
+            if (endAMPM.toLowerCase() == "pm" && endHours > 12) endHours = endHours - 12;
             // if (endAMPM.toLowerCase() == "am" && endHours == 12) endHours = endHours - 12;
 
             //add extra 0 for minute field values that are between 0 and 9
