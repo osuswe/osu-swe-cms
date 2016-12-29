@@ -45,6 +45,8 @@ Route::post('/admin/manage/login', 'Admin\\UsersController@cmsLogin');
         echo $userC->login($r);
     });
 
+    Route::get('/admin/logout', 'Admin\\UsersController@logout');
+
     Route::get('/admin/get/events/all', function () {
         $eventsC = new \App\Http\Controllers\Admin\EventsController();
         echo $eventsC->all();

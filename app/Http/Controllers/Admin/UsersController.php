@@ -24,6 +24,12 @@ class UsersController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
+    //Logs out of session
+    public function logout(){
+        session_destroy();
+        return view('login');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
