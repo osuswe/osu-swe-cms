@@ -146,6 +146,16 @@
 
             console.log("Start am/pm: " + startAMPM);
 
+            //make sure 0 hours shows 12am
+            if(startAMPM.toLowerCase() == 'am' && startHours == 0){
+                startHours = 12;
+            }
+
+            if(endAMPM.toLowerCase() == 'am' && endHours == 0){
+                endHours = 12;
+            }
+
+
             //reformat time_range to be displayable
             if (startAMPM.toLowerCase() == "pm" && startHours > 12) startHours = startHours - 12;
             // if (startAMPM.toLowerCase() == "am" && startHours == 12) startHours = startHours - 12;
