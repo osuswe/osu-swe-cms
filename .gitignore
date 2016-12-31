@@ -4,3 +4,9 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea
+.buildpath
+.idea/dataSources/ce2511c6-ebac-4e82-93e5-0baf8b4c9633/
+.idea/inspectionProfiles/
+nbproject/
+/.idea/
