@@ -9,6 +9,12 @@
     echo "<script>
     var timeArray = " . json_encode($timeArray) . ";
 
+
+    </script>";
+
+    ?>
+
+    <script>
         window.onload = function () {
 
             initTimes();
@@ -34,8 +40,18 @@
                 endHoursMinutesSplit[0] = parseInt(endHoursMinutesSplit[0]) + 12;
             }
 
-                document.getElementById('start_time').value = startHoursMinutesSplit[0] + ':' + startHoursMinutesSplit[1];
-                document.getElementById('end_time').value = endHoursMinutesSplit[0] + ':' + endHoursMinutesSplit[1];
+            if(parseInt(startHoursMinutesSplit[0]) == 12 && startTimeAMPMSplit[1] == 'am'){
+                startHoursMinutesSplit[0] = "00";
+            }
+
+            if(parseInt(endHoursMinutesSplit[0]) == 12 && endTimeAMPMSplit[1] == 'am'){
+                endHoursMinutesSplit[0] = "00";
+            }
+
+
+
+            document.getElementById('start_time').value = startHoursMinutesSplit[0] + ':' + startHoursMinutesSplit[1];
+            document.getElementById('end_time').value = endHoursMinutesSplit[0] + ':' + endHoursMinutesSplit[1];
         }
 
         function setEventObj() {
@@ -52,47 +68,54 @@
             var startAMPM, endAMPM;
 
             //start time corrections
-            
+
             if(parseInt(startHoursMinutesSplit[0]) == 12){
                 startAMPM = 'pm';
             }
-            
+
             else if (parseInt(startHoursMinutesSplit[0]) > 12) {
                 startHoursMinutesSplit[0] = parseInt(startHoursMinutesSplit[0]) - 12;
                 startAMPM = 'pm';
             }
-            
+
             else{
                 startAMPM = 'am';
             }
-            
+
+            if(parseInt(startHoursMinutesSplit[0]) == 0){
+                startHoursMinutesSplit[0] = 12;
+            }
+
+
             //end time corrections
-            
+
             if(parseInt(endHoursMinutesSplit[0]) == 12){
                 endAMPM = 'pm';
             }
-            
+
             else if (parseInt(endHoursMinutesSplit[0]) > 12) {
                 endHoursMinutesSplit[0] = parseInt(endHoursMinutesSplit[0]) - 12;
                 endAMPM = 'pm';
             }
-            
+
             else{
                 endAMPM = 'am';
             }
-           
+
+            if(parseInt(endHoursMinutesSplit[0]) == 0){
+                endHoursMinutesSplit[0] = 12;
+            }
+
 
             //construct and assign time_range string
-            document.getElementById('time_range').value = startHoursMinutesSplit[0] + ':' + startHoursMinutesSplit[1] 
-            + ' ' + startAMPM +  '-' + endHoursMinutesSplit[0] + ':' + endHoursMinutesSplit[1]
-            + ' ' + endAMPM;
+            document.getElementById('time_range').value = startHoursMinutesSplit[0] + ':' + startHoursMinutesSplit[1]
+                + ' ' + startAMPM +  '-' + endHoursMinutesSplit[0] + ':' + endHoursMinutesSplit[1]
+                + ' ' + endAMPM;
 
             console.log(document.getElementById('time_range').value);
             document.getElementsByTagName('form')[0].submit();
         };
-    </script>";
-
-    ?>
+    </script>
 
 
     <div class='container'>
