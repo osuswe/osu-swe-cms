@@ -175,7 +175,7 @@ class UsersController extends Controller
      */
     public function getUsers()
     {
-        return User::where('id', '>', 0)->orderBy('lastName', 'asc')
+        return User::where('id', '>', 0)->orderBy('firstName', 'asc')
             ->get();
     }
 
