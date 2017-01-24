@@ -8,7 +8,10 @@
 
     td{
         word-break: break-all;
-        max-width: 300px;
+    }
+
+    .description{
+        max-width: 250px;
     }
 </style>
 
@@ -43,7 +46,7 @@
                         <td class="titleLink" id="{{$item->id}}">{{ $item->title }}</td>
                         <td>{{ $item->date }}</td>
                         <td>{{ $item->location }}</td>
-                        <td>{{ $item->description }}</td>
+                        <td class="description">{{ $item->description }}</td>
                         <td>{{ $item->time_range }}</td>
                         <td>{{ $item->event_code }}</td>
                         <td>
