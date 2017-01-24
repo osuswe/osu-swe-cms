@@ -13,6 +13,10 @@
     .description{
         max-width: 250px;
     }
+
+    .titleLink{
+        max-width: 200px;
+    }
 </style>
 
 
@@ -27,7 +31,7 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>S.No</th>
+                    {{--<th>S.No</th>--}}
                     <th> Title</th>
                     <th> Date</th>
                     <th> Location</th>
@@ -42,13 +46,13 @@
                 @foreach($events as $item)
                     {{-- */$x++;/* --}}
                     <tr>
-                        <td>{{ $x }}</td>
+                        {{--<td>{{ $x }}</td>--}}
                         <td class="titleLink" id="{{$item->id}}">{{ $item->title }}</td>
                         <td>{{ $item->date }}</td>
                         <td>{{ $item->location }}</td>
                         <td class="description">{{ $item->description }}</td>
                         <td>{{ $item->time_range }}</td>
-                        <td>{{ $item->event_code }}</td>
+                        <td class="event-code">{{ $item->event_code }}</td>
                         <td>
                             <a href="{{ url('/admin/events/' . $item->id) }}" class="btn btn-success btn-xs"
                                title="View Event"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>

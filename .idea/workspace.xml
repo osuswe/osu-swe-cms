@@ -121,15 +121,15 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/events/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="135">
+              <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <marker date="1485298233000" expanded="true" signature="2114:2342" ph="..." />
-                <marker date="1485298233000" expanded="true" signature="2126:2340" ph="..." />
-                <marker date="1485298233000" expanded="true" signature="2127:2339" ph="..." />
-                <marker date="1485298233000" expanded="true" signature="2377:2788" ph="..." />
-                <marker date="1485298233000" expanded="true" signature="2391:2787" ph="..." />
-                <marker date="1485298233000" expanded="true" signature="2483:2786" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2198:2426" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2210:2424" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2211:2423" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2461:2872" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2475:2871" ph="..." />
+                <marker date="1485298866000" expanded="true" signature="2567:2870" ph="..." />
               </folding>
             </state>
           </provider>
@@ -758,7 +758,7 @@
       <workItem from="1483834947323" duration="361000" />
       <workItem from="1484240778058" duration="17000" />
       <workItem from="1484625659538" duration="1326000" />
-      <workItem from="1485293294645" duration="2508000" />
+      <workItem from="1485293294645" duration="3001000" />
     </task>
     <task id="LOCAL-00001" summary="set login for CMS; no functionality yet">
       <created>1475378301460</created>
@@ -785,7 +785,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137439000" />
+    <option name="totallyTimeSpent" value="137932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
@@ -1113,15 +1113,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/events/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        <state relative-caret-position="135">
+          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <marker date="1485298233000" expanded="true" signature="2114:2342" ph="..." />
-            <marker date="1485298233000" expanded="true" signature="2126:2340" ph="..." />
-            <marker date="1485298233000" expanded="true" signature="2127:2339" ph="..." />
-            <marker date="1485298233000" expanded="true" signature="2377:2788" ph="..." />
-            <marker date="1485298233000" expanded="true" signature="2391:2787" ph="..." />
-            <marker date="1485298233000" expanded="true" signature="2483:2786" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2198:2426" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2210:2424" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2211:2423" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2461:2872" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2475:2871" ph="..." />
+            <marker date="1485298866000" expanded="true" signature="2567:2870" ph="..." />
           </folding>
         </state>
       </provider>
