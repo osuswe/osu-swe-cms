@@ -10,13 +10,13 @@
         word-break: break-all;
     }
 
-    .description{
-        max-width: 250px;
-    }
+    /*.description{*/
+        /*max-width: 250px;*/
+    /*}*/
 
-    .titleLink{
-        max-width: 200px;
-    }
+    /*.titleLink{*/
+        /*max-width: 200px;*/
+    /*}*/
 </style>
 
 
@@ -47,12 +47,12 @@
                     {{-- */$x++;/* --}}
                     <tr>
                         {{--<td>{{ $x }}</td>--}}
-                        <td class="titleLink" id="{{$item->id}}">{{ $item->title }}</td>
-                        <td>{{ $item->date }}</td>
-                        <td>{{ $item->location }}</td>
-                        <td class="description">{{ $item->description }}</td>
-                        <td>{{ $item->time_range }}</td>
-                        <td class="event-code">{{ $item->event_code }}</td>
+                        <td class="titleLink col-lg-3" id="{{$item->id}}">{{ $item->title }}</td>
+                        <td class="col-lg-1">{{ $item->date }}</td>
+                        <td class="col-lg-2">{{ $item->location }}</td>
+                        <td class="col-lg-3">{{ $item->description }}</td>
+                        <td class="col-lg-2">{{ $item->time_range }}</td>
+                        <td class="col-lg 1">{{ $item->event_code }}</td>
                         <td>
                             <a href="{{ url('/admin/events/' . $item->id) }}" class="btn btn-success btn-xs"
                                title="View Event"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"/></a>
