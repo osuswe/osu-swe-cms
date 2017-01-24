@@ -1,5 +1,11 @@
 @if(isset($_SESSION['admin']))
 <style type="text/css">
+
+
+    html, td{
+        font-size: 14px;
+    }
+
     td{
         word-break: break-all;
         max-width: 300px;
