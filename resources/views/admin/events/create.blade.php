@@ -1,6 +1,11 @@
 @if(isset($_SESSION['admin']))
 
-
+    <style type="text/css">
+        td{
+            word-break: break-all;
+            max-width: 300px;
+        }
+    </style>
 
     @extends('layouts.app')
 
@@ -36,7 +41,7 @@
         <div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
             {!! Form::label('description', 'Description', ['class' => 'col-sm-3 control-label']) !!}
             <div class="col-sm-6">
-                {!! Form::text('description', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                {!! Form::textarea('description', null, ['class' => 'form-control', 'required' => 'required']) !!}
                 {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
             </div>
         </div>

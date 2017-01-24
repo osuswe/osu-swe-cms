@@ -1,6 +1,11 @@
 @if(isset($_SESSION['admin']))
 
-
+    <style type="text/css">
+        td{
+            word-break: break-all;
+            max-width: 300px;
+        }
+    </style>
 
     @extends('layouts.app')
 
