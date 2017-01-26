@@ -11,7 +11,8 @@
         <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
-                    <th>S.No</th>
+                    <!--<th>S.No</th>-->
+                    <th> Id </th>
                     <th> First Name </th>
                     <th> Last Name </th>
                     <th> Username </th>
@@ -28,7 +29,8 @@
             @foreach($users as $item)
                 {{-- */$x++;/* --}}
                 <tr>
-                    <td>{{ $x }}</td>
+                    <!--<td>{{ $x }}</td>-->
+                    <td>{{ $item->id }}</td>
                     <td>{{ $item->firstName }}</td>
                     <td>{{ $item->lastName }}</td>
                     <td>{{ $item->username }}</td>

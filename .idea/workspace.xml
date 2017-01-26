@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58dbe796-44f1-4a62-bb09-72a1c3a629dd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/events/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/events/index.blade.php" />
-    </list>
+    <list default="true" id="58dbe796-44f1-4a62-bb09-72a1c3a629dd" name="Default" comment="" />
     <ignored path="SWEAppBackend.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -758,7 +756,7 @@
       <workItem from="1483834947323" duration="361000" />
       <workItem from="1484240778058" duration="17000" />
       <workItem from="1484625659538" duration="1326000" />
-      <workItem from="1485293294645" duration="3352000" />
+      <workItem from="1485293294645" duration="3536000" />
     </task>
     <task id="LOCAL-00001" summary="set login for CMS; no functionality yet">
       <created>1475378301460</created>
@@ -785,11 +783,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138283000" />
+    <option name="totallyTimeSpent" value="138467000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="727" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="727" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24071082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />

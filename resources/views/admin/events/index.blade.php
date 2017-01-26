@@ -31,7 +31,7 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                    {{--<th>S.No</th>--}}
+                    <th> Id</th>
                     <th> Title</th>
                     <th> Date</th>
                     <th> Location</th>
@@ -46,8 +46,8 @@
                 @foreach($events as $item)
                     {{-- */$x++;/* --}}
                     <tr>
-                        {{--<td>{{ $x }}</td>--}}
-                        <td class="titleLink col-lg-3" id="{{$item->id}}">{{ $item->title }}</td>
+                        <td class="col-lg-1">{{ $item->id }}</td>
+                        <td class="titleLink col-lg-2" id="{{$item->id}}">{{ $item->title }}</td>
                         <td class="col-lg-1">{{ $item->date }}</td>
                         <td class="col-lg-2">{{ $item->location }}</td>
                         <td class="col-lg-3">{{ $item->description }}</td>
